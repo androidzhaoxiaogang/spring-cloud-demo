@@ -1,0 +1,13 @@
+server:
+  port: 11114
+
+spring:
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://120.26.118.115/yushi/spring-cloud-demo.git
+        svn:
+          uri: https://www.xxx.com/svn/demo/demo-config-repo

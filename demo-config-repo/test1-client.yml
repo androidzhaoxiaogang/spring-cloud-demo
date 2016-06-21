@@ -1,0 +1,19 @@
+server:
+  port: 11116
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/
+  instance:
+    preferIpAddress: true
+
+### ribbon直接映射注册到eureka的服务
+#ribbon:
+#  eureka:
+#    enabled: true
+#
+#zuul:
+#  ignored-services: '*'
+#  routes:
+#    test1-service: /test1/**
