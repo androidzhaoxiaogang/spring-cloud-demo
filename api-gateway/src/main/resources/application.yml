@@ -1,8 +1,8 @@
 server:
-  port: 11112
-
-sidecar:
   port: 11113
+
+#sidecar:
+#  port: 11114
 
 endpoints:
   restart:
@@ -12,9 +12,16 @@ endpoints:
   health:
     sensitive: false
 
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:11111/eureka/
+ribbon:
+  eureka:
+    enabled: true
+
+zuul:
+  ignored-services: "*"
+  routes:
+    product:
+      path: /product/**
+      url: http://localhost:11116/product
+    recommend:
+      path: /recommend/**
+      url: http://localhost:11115/recommend

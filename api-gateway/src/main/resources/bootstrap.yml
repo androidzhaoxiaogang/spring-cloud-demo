@@ -6,3 +6,12 @@ spring:
       uri: http://configserver:8888
 encrypt:
   failOnError: false
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/

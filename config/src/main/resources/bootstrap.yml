@@ -1,0 +1,20 @@
+server:
+  port: 11112
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/
+
+spring:
+  application:
+    name: config
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xysLion/demo-config-repo

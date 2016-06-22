@@ -1,8 +1,9 @@
 package com.xys.apigateway;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.sidecar.EnableSidecar;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
@@ -14,7 +15,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * @Copyright:杭州安存网络科技有限公司 Copyright (c) 2016
  */
 @SpringBootApplication
-@EnableSidecar
+@EnableCircuitBreaker
+@EnableDiscoveryClient
 @EnableZuulProxy
 public class ApiGateWayServer {
 
@@ -24,7 +26,7 @@ public class ApiGateWayServer {
      * @param args  所需参数
      */
     public static void main(String[] args) {
-        SpringApplication.run(ApiGateWayServer.class, args);
+        new SpringApplicationBuilder(ApiGateWayServer.class).web(true).run(args);
     }
 
 }
