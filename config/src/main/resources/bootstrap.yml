@@ -18,6 +18,4 @@ spring:
       server:
         git:
           uri: http://120.26.118.115/yushi/spring-cloud-demo.git
-          username: xieyushi@ancun.com
-          password: ys23ys9376
           searchPaths: config-repo
