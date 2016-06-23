@@ -1,0 +1,27 @@
+server:
+  port: 11113
+
+#sidecar:
+#  port: 11114
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+ribbon:
+  eureka:
+    enabled: true
+
+zuul:
+  ignored-services: "*"
+  routes:
+    product:
+      path: /product/**
+      serviceId: product
+    recommend:
+      path: /recommend/**
+      serviceId: recommend
