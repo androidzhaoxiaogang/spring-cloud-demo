@@ -6,24 +6,3 @@ spring:
       uri: http://localhost:11112
 encrypt:
   failOnError: false
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:11111/eureka/
-  instance:
-    preferIpAddress: true
-    appname: product
-    virtual-host-name: product
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-ribbon:
-  eureka:
-    enabled: true
