@@ -36,3 +36,9 @@ zuul:
       path: /recommend/**
       serviceId: recommend
       stripPrefix: false
+
+proxy:
+  auth:
+    routes:
+      product: oauth2
+      recommend: none
