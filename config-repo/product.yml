@@ -1,0 +1,4 @@
+server:
+  port: 11116
+  
+password: '{cipher}FKSAJDFGYOS8F7GLHAKERGFHLSAJ'
