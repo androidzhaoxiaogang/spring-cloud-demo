@@ -1,0 +1,36 @@
+server:
+  port: 11113
+
+#sidecar:
+#  port: 11114
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+ribbon:
+  eureka:
+    enabled: true
+
+zuul:
+  ignored-services: "*"
+  routes:
+    product:
+      path: /product/**
+      serviceId: product
+    recommend:
+      path: /recommend/**
+      serviceId: recommend
