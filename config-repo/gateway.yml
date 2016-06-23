@@ -31,6 +31,8 @@ zuul:
     product:
       path: /product/**
       serviceId: product
+      stripPrefix: false
     recommend:
       path: /recommend/**
       serviceId: recommend
+      stripPrefix: false
