@@ -12,9 +12,16 @@
     <artifactId>recommend</artifactId>
 
     <dependencies>
+        <!-- 注册服务 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!-- 统一配置客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
     </dependencies>
 
