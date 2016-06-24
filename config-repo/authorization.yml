@@ -21,3 +21,5 @@ security:
       clientSectet: acmesecret
       authorizedGrantTypes: authorization_code,refresh_token,implicit,password,client_credentials
       scop: openid
+
+logging.level.org.springframework.security.oauth2: DEBUG
