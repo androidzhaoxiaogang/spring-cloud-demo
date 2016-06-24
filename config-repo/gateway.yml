@@ -7,6 +7,14 @@ sidecar:
 zuul:
   ignored-services: "*"
   routes:
+    authorization:
+      sensitiveHeaders:
+      path: /uaa/**
+      stripPrefix: false
+    dummy:
+      path: /dummy/**
+      serviceId: dummy
+      stripPrefix: false
     product:
       path: /product/**
       serviceId: product
