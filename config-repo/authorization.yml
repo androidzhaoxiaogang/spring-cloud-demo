@@ -1,0 +1,14 @@
+# Define the port where the UAA server would be running
+server:
+  port: 11115
+  # Use different context-path to avoid session cookie overlapping
+  context-path: /uaa
+  use-forward-headers: true
+
+# Define security
+security:
+  basic:
+    enabled: false
+  user:
+    password: password
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**

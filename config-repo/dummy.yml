@@ -1,34 +1,12 @@
+# Define the port where the Widget Foundry server would be running
 server:
-  port: 11113
+  port: 11118
 
-sidecar:
-  port: 11114
-
-zuul:
-  ignored-services: "*"
-  routes:
-    product:
-      path: /product/**
-      serviceId: product
-      stripPrefix: false
-    recommend:
-      path: /recommend/**
-      serviceId: recommend
-      stripPrefix: false
-  add-proxy-headers: true
-
+# Disable spring basic authentication security
 security:
-  # Disable Spring Boot basic authentication
   basic:
     enabled: false
   oauth2:
-    sso:
-      loginPath: /login
-    client:
-      accessTokenUri: http://localhost:${server.port}/uaa/oauth/token
-      userAuthorizationUri: /uaa/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
     resource:
       jwt:
         keyValue: |
