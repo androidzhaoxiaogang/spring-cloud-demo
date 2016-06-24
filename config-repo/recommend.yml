@@ -1,17 +1,2 @@
 server:
   port: 11115
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:11111/eureka/
-  instance:
-    preferIpAddress: true

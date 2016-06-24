@@ -1,22 +1,5 @@
 server:
   port: 11116
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:11111/eureka/
-  instance:
-    preferIpAddress: true
-    appname: product
-    virtual-host-name: product
-
-endpoints:
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
 
 ribbon:
   eureka:

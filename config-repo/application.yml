@@ -1,0 +1,28 @@
+# 是否开启管理接口
+endpoints:
+  restart:  # 服务重启接口
+    enabled: true
+  shutdown: # 服务停机接口
+    enabled: true
+  health:   # 服务健康检测接口
+    sensitive: false
+
+# ribbon 客户端负载均衡
+ribbon:
+  eureka: # 使用试用eureka发现服务进行负载均衡
+    enabled: true
+
+# eureka服务注册
+eureka:
+  instance:
+    # eureka服务端hostname
+    hostname: localhost
+    # eureka服务端端口
+    port: 11111
+    # 开启ip先于hostname
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
