@@ -1,10 +1,6 @@
 server:
   port: 11117
 
-ribbon:
-  eureka:
-    enabled: true
-
 security:
   oauth2:
     resource:
@@ -47,7 +43,3 @@ ribbon:
 #
 #  ConnectTimeout: 100
 #  ReadTimeout: 3000
-
-app:
-  ConnectTimeout: 100
-  ReadTimeout: 3000
