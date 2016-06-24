@@ -10,6 +10,7 @@ zuul:
     authorization:
       sensitiveHeaders:
       path: /uaa/**
+      serviceId: authorization
       stripPrefix: false
     dummy:
       path: /dummy/**
