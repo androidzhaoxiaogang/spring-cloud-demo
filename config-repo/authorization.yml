@@ -2,7 +2,7 @@
 server:
   port: 11115
   ssl:
-    keyStore: classpath:keystore.jks
+    keyStore: classpath:server.jks
     keyStorePassword: password
     keyPassword: password
   # Use different context-path to avoid session cookie overlapping
