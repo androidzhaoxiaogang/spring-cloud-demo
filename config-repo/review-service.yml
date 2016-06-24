@@ -1,0 +1,12 @@
+server:
+  port: 11118
+
+ribbon:
+  # Interval to refresh the server list from the source
+  serverListRefreshInterval: 1000
+#
+#  # Connect timeout used by Apache HttpClient
+#  connectTimeout: 100
+#
+#  # Read timeout used by Apache HttpClient
+#  readTimeout: 10000

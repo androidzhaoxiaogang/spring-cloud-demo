@@ -1,9 +1,12 @@
 # Define the port where the UAA server would be running
 server:
   port: 11115
+  ssl:
+    keyStore: classpath:keystore.jks
+    keyStorePassword: password
+    keyPassword: password
   # Use different context-path to avoid session cookie overlapping
   context-path: /uaa
-  use-forward-headers: true
 
 # Define security
 security:
@@ -12,3 +15,9 @@ security:
   user:
     password: password
   ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+  oauth2:
+    client:
+      clientId: acme
+      clientSectet: acmesecret
+      authorizedGrantTypes: authorization_code,refresh_token,implicit,password,client_credentials
+      scop: openid

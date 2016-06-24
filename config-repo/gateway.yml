@@ -4,45 +4,37 @@ server:
 sidecar:
   port: 11114
 
+spring:
+  oauth2:
+    resource:
+      userInfoUri: https://localhost:11118/uaa/user
+
 zuul:
   ignored-services: "*"
+  prefix: /api
   routes:
-    authorization:
-      sensitiveHeaders:
-      path: /uaa/**
-      serviceId: authorization
-      stripPrefix: false
-    dummy:
-      path: /dummy/**
-      serviceId: dummy
-      stripPrefix: false
     product:
       path: /product/**
       serviceId: product
       stripPrefix: false
-    recommend:
-      path: /recommend/**
-      serviceId: recommend
-      stripPrefix: false
-  add-proxy-headers: true
 
-security:
-  # Disable Spring Boot basic authentication
-  basic:
-    enabled: false
-  oauth2:
-    sso:
-      loginPath: /login
-    client:
-      accessTokenUri: http://localhost:${server.port}/uaa/oauth/token
-      userAuthorizationUri: /uaa/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
-    resource:
-      jwt:
-        keyValue: |
-          -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
-          -----END PUBLIC KEY-----
-      id: openid
-      serviceId: ${PREFIX:}resource
+hystrix:
+  threadpool:
+    default:
+      # Maximum number of concurrent requests when using thread pools (Default: 10)
+      coreSize: 100
+      # Maximum LinkedBlockingQueue size - -1 for using SynchronousQueue (Default: -1)
+      maxQueueSize: -1
+      # Queue size rejection threshold (Default: 5)
+      queueSizeRejectionThreshold: 5
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 30000
+        requestVolumeThreshold: 20
+      execution:
+        isolation:
+#          strategy: SEMAPHORE, no thread pool but timeout handling stops to work
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000
