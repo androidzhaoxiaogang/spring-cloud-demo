@@ -9,13 +9,16 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>discovery</module>
-        <module>config</module>
-        <module>api-gateway</module>
-        <module>recommend</module>
-        <module>product</module>
-        <module>authorization</module>
-        <module>dummy</module>
+        <module>support/discovery</module>
+        <module>support/config</module>
+        <module>support/api-gateway</module>
+        <module>support/authorization</module>
+        <module>core/product-service</module>
+        <module>api/product</module>
+        <module>core/recommendation-service</module>
+        <module>core/review-service</module>
+        <module>support/turbine</module>
+        <module>support/monitor-dashboard</module>
     </modules>
 
     <parent>

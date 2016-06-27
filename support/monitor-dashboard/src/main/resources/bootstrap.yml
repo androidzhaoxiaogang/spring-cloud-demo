@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: monitor-dashboard
+  cloud:
+    config:
+      uri: http://localhost:11112
+encrypt:
+  failOnError: false
