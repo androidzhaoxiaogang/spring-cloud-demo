@@ -1,10 +1,10 @@
 # Define the port where the UAA server would be running
 server:
   port: 11115
-  ssl:
-    keyStore: classpath:server.jks
-    keyStorePassword: password
-    keyPassword: password
+#  ssl:
+#    keyStore: classpath:server.jks
+#    keyStorePassword: password
+#    keyPassword: password
   # Use different context-path to avoid session cookie overlapping
   context-path: /uaa
 
