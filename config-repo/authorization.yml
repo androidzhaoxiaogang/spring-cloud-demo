@@ -6,7 +6,7 @@ server:
 #    keyStorePassword: password
 #    keyPassword: password
   # Use different context-path to avoid session cookie overlapping
-  context-path: /uaa
+#  context-path: /uaa
 
 # Define security
 security:
