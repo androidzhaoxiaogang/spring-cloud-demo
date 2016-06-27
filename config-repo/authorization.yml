@@ -14,13 +14,13 @@ security:
     enabled: false
   user:
     password: password
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
-  oauth2:
-    client:
-      client_id: acme
-      client_secret: acmesecret
-      authorized-grant-types: authorization_code,refresh_token,implicit,password,client_credentials
-      scop: openid
+#  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+#  oauth2:
+#    client:
+#      client_id: acme
+#      client_secret: acmesecret
+#      authorized-grant-types: authorization_code,refresh_token,implicit,password,client_credentials
+#      scop: openid
 
 logging:
   level:
