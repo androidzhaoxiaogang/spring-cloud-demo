@@ -17,9 +17,9 @@ security:
   ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   oauth2:
     client:
-      clientId: acme
-      clientSectet: acmesecret
-      authorizedGrantTypes: authorization_code,refresh_token,implicit,password,client_credentials
+      client_id: acme
+      client_secret: acmesecret
+      authorized-grant-types: authorization_code,refresh_token,implicit,password,client_credentials
       scop: openid
 
 logging:
