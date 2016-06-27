@@ -23,4 +23,5 @@ security:
       scop: openid
 
 logging:
-  level: DEBUG
+  level:
+    org.springframework.security.oauth2: DEBUG
