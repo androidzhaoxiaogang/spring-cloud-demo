@@ -3,4 +3,4 @@ server:
 
 turbine:
   appConfig: product-service,recommendation-service,review-service,product
-  clusterNameExpression: 'default'
+  clusterNameExpression: new String('default')
