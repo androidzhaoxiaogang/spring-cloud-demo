@@ -224,45 +224,4 @@ public class ProductCompositeIntegration {
         }
     }
 
-// FIXME: DOESN'T WORK. GIVER ERORS LIKE: Caused by: java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to se.callista.microservises.core.recommendation.model.Recommendation
-//    private <T> T responseString2Type(ResponseEntity<String> response) {
-//        try {
-//            ObjectMapper mapper = new ObjectMapper();
-//            T object = mapper.readValue(response.getBody(), new TypeReference<T>() {});
-//            return object;
-//
-//        } catch (IOException e) {
-//            LOG.warn("IO-err. Failed to read JSON", e);
-//            throw new RuntimeException(e);
-//
-//        } catch (RuntimeException re) {
-//            LOG.warn("RTE-err. Failed to read JSON", re);
-//            throw re;
-//        }
-//    }
-//
-//    /**
-//     * TODO: DO WE REALLY NEED THIS ONE???
-//     *
-//     * @param response
-//     * @param <T>
-//     * @return
-//     */
-//    private <T> List<T> responseString2List(ResponseEntity<String> response) {
-//        try {
-//            ObjectMapper mapper = new ObjectMapper();
-//            List<T> list = mapper.readValue(response.getBody(), new TypeReference<List<T>>() {});
-//            return list;
-//
-//        } catch (IOException e) {
-//            LOG.warn("IO-err. Failed to read JSON", e);
-//            throw new RuntimeException(e);
-//
-//        } catch (RuntimeException re) {
-//            LOG.warn("RTE-err. Failed to read JSON", re);
-//            throw re;
-//        }
-//    }
-//
-
 }

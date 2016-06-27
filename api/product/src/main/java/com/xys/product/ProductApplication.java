@@ -1,7 +1,5 @@
 package com.xys.product;
 
-import com.netflix.hystrix.strategy.HystrixPlugins;
-import com.xys.product.util.MDCHystrixConcurrencyStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -44,8 +42,8 @@ public class ProductApplication {
     }
 
     public static void main(String[] args) {
-        LOG.info("Register MDCHystrixConcurrencyStrategy");
-        HystrixPlugins.getInstance().registerConcurrencyStrategy(new MDCHystrixConcurrencyStrategy());
+//        LOG.info("Register MDCHystrixConcurrencyStrategy");
+//        HystrixPlugins.getInstance().registerConcurrencyStrategy(new MDCHystrixConcurrencyStrategy());
 
         ConfigurableApplicationContext ctx = SpringApplication.run(ProductApplication.class, args);
 
