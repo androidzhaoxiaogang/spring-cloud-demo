@@ -4,10 +4,10 @@ server:
 sidecar:
   port: 11114
 
-spring:
-  oauth2:
-    resource:
-      userInfoUri: https://localhost:11118/uaa/user
+#spring:
+#  oauth2:
+#    resource:
+#      userInfoUri: https://localhost:11115/uaa/user
 
 zuul:
   ignored-services: "*"
