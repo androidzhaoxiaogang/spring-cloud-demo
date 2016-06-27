@@ -16,7 +16,6 @@ zuul:
     product:
       path: /product/**
       serviceId: product
-      stripPrefix: false
 
 hystrix:
   threadpool:
