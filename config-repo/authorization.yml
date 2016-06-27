@@ -14,7 +14,7 @@ security:
     enabled: false
   user:
     password: password
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**,/oauth/**
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   oauth2:
     client:
       clientId: acme
