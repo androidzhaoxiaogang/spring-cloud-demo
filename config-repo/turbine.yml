@@ -2,5 +2,5 @@ server:
   port: 11116
 
 turbine:
-  appConfig: product-service,recommendation-service,review-service,product
+  appConfig: product
   clusterNameExpression: new String("default")
