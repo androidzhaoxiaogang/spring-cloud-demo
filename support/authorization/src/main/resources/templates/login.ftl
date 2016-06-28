@@ -1,7 +1,13 @@
 <html>
 <head>
+    <link rel="stylesheet" href="css/wro.css"/>
 </head>
 <body>
+<#if RequestParameters['error']??>
+<div class="alert alert-danger">
+    There was a problem logging in. Please try again.
+</div>
+</#if>
 <div class="container">
     <form role="form" action="login" method="post">
         <div class="form-group">
@@ -16,5 +22,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<script src="js/wro.js" type="text/javascript"></script>
 </body>
 </html>
