@@ -1,14 +1,14 @@
 server:
   port: 11121
 
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:11113/api/uaa/user
-
-management:
-  security:
-    enabled: false
+#security:
+#  oauth2:
+#    resource:
+#      userInfoUri: http://localhost:11113/api/uaa/user
+#
+#management:
+#  security:
+#    enabled: false
 
 hystrix:
   threadpool:
