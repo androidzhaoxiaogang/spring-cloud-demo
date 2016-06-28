@@ -17,11 +17,6 @@ zuul:
       path: /product/**
       serviceId: product
 
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:11113/api/uaa/user
-
 hystrix:
   threadpool:
     default:
