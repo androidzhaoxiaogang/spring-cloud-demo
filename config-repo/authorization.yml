@@ -12,8 +12,8 @@ server:
 security:
   basic:
     enabled: false
-#  user:
-#    password: password
+  user:
+    password: password
 #  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
   oauth2:
     client:
