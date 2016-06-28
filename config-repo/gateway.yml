@@ -9,6 +9,7 @@ zuul:
   prefix: /api
   routes:
     authorization:
+      sensitiveHeaders:
       path: /uaa/**
       serviceId: authorization
     product:
