@@ -25,4 +25,4 @@ logging:
 #    # Set DEBUG level on Hystrix to get an error message when a fallback method is used.
 #    com.netflix.hystrix: DEBUG
 #    com.netflix.hystrix.strategy.properties.HystrixPropertiesChainedArchaiusProperty: WARN
-    org.springframework.security: DEBUG
+#    org.springframework.security: DEBUG
