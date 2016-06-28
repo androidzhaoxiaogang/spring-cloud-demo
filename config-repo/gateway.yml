@@ -13,6 +13,7 @@ zuul:
       path: /uaa/**
       serviceId: authorization
     product:
+      sensitiveHeaders:
       path: /product/**
       serviceId: product
 
