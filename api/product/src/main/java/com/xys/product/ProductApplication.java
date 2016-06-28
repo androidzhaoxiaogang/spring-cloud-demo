@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.client.RestTemplate;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -24,7 +25,7 @@ import javax.net.ssl.HttpsURLConnection;
 @SpringBootApplication
 @EnableCircuitBreaker
 @EnableDiscoveryClient
-//@EnableResourceServer
+@EnableResourceServer
 public class ProductApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(ProductApplication.class);
