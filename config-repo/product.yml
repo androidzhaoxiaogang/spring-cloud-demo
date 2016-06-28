@@ -4,7 +4,7 @@ server:
 security:
   oauth2:
     resource:
-      userInfoUri: http://gateway/api/uaa/user
+      userInfoUri: http://localhost:11115/uaa/user
 
 management:
   security:
