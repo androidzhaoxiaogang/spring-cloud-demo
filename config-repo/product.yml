@@ -2,6 +2,7 @@ server:
   port: 11121
 
 security:
+  ignored: /css/**,/js/**,/images/**,/favicon.ico,/webjars/**,/v2/**,/swagger**,/swagger-resources/**
   oauth2:
     resource:
       userInfoUri: http://localhost:11113/api/uaa/user
