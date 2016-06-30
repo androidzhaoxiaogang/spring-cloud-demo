@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sink
+  cloud:
+    config:
+      uri: http://localhost:11112
+    stream:
+      bindings:
+        input:
+          destination: timerTopic
+          content-type: application/json
+          group: timerGroup
+      kafka:
+        bindings:
+          input:
+            consumer:
+              resetOffsets: true
+        binder:
+          zk-nodes: ["192.168.0.142:2181"]
+          brokers: ["192.168.0.142:9092"]
+encrypt:
+  failOnError: false
+
+server:
+  port: 11123
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/

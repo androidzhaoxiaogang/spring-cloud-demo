@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: source
+  cloud:
+    config:
+      uri: http://localhost:11112
+    stream:
+      kafka:
+        binder:
+          zk-nodes: ["192.168.0.142"]
+          brokers: ["192.168.0.142"]
+        bindings:
+          output:
+            destination: timerTopic
+            content-type: application/json
+encrypt:
+  failOnError: false
+
+server:
+  port: 11122
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka/
