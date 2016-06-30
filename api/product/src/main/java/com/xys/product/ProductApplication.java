@@ -10,6 +10,8 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -49,6 +51,21 @@ public class ProductApplication {
         ConfigurableApplicationContext ctx = SpringApplication.run(ProductApplication.class, args);
 
         LOG.info("Connected to RabbitMQ at: {}", ctx.getEnvironment().getProperty("spring.rabbitmq.host"));
+    }
+
+    @Controller
+   public static class ApiDocument {
+
+        /**
+         * 导航到api接口文档界面
+         *
+         * @return  api接口文档界面
+         */
+        @RequestMapping("/")
+        public String apiDoc(){
+            return "forward:/swagger-ui.html";
+        }
+
     }
 
 }

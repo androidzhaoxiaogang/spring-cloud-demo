@@ -10,6 +10,8 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger.web.ApiKeyVehicle;
+import springfox.documentation.swagger.web.SecurityConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
@@ -49,13 +51,28 @@ public class SwaggerConfig {
         return docket;
     }
 
+    @Bean
+    public SecurityConfiguration securityConfiguration(){
+        return new SecurityConfiguration(
+                "acme", "acmesecret", "realm", "app_product", "password", ApiKeyVehicle.HEADER, "user", ",");
+    }
+
+    /**
+     * Oauth2.0认证设置
+     *
+     * @return  Oauth2.0认证设置
+     */
     private OAuth securitySchema() {
         AuthorizationScope authorizationScope = new AuthorizationScope(AUTHORIZATION_SCOPE_GLOBAL, AUTHORIZATION_SCOPE_GLOBAL);
-        LoginEndpoint loginEndpoint = new LoginEndpoint("http://gateway/api/uaa/oauth/token");
-        GrantType grantType = new ImplicitGrant(loginEndpoint, "access_token");
+        GrantType grantType = new ClientCredentialsGrant("http://localhost:11113/api/uaa/oauth/token");
         return new OAuth(SECURITY_SCHEMA_O_AUTH_2, newArrayList(authorizationScope), newArrayList(grantType));
     }
 
+    /**
+     * 安全相关上下文
+     *
+     * @return  安全上下文
+     */
     private SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
@@ -63,10 +80,21 @@ public class SwaggerConfig {
                 .build();
     }
 
+    /**
+     * 路劲规则，所有路径
+     *
+     * @return 路劲规则
+     */
     private Predicate<String> pathSelector(){
         return PathSelectors.any();
     }
 
+    /**
+     * 认证列表
+     * 只提供oauth2.0认证
+     *
+     * @return  默认列表
+     */
     private List<SecurityReference> defaultAuth() {
         AuthorizationScope authorizationScope
                 = new AuthorizationScope(AUTHORIZATION_SCOPE_GLOBAL, AUTHORIZATION_SCOPE_GLOBAL_DESC);
@@ -82,11 +110,12 @@ public class SwaggerConfig {
      * @return  api信息
      */
     private ApiInfo apiInfo() {
+        Contact contact = new Contact("摇光", "", "xieyushi@ancun.com");
         return new ApiInfoBuilder()
                 .title("SPRING CLOUD DEMO - MICROSERVICE PERODUCT - RESTful APIs")
                 .description("Spring Boot中使用Swagger2构建RESTful APIs")
                 .termsOfServiceUrl("http://http://it.ancun-inc.com/")
-                .contact("摇光")
+                .contact(contact)
                 .version("1.0")
                 .build();
     }
