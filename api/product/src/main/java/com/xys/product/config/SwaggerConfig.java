@@ -54,7 +54,7 @@ public class SwaggerConfig {
     @Bean
     public SecurityConfiguration securityConfiguration(){
         return new SecurityConfiguration(
-                "acme", "acmesecret", "realm", "app_product", "password", ApiKeyVehicle.HEADER, "user", ",");
+                "acme", "acmesecret", "realm", "app_product", "", ApiKeyVehicle.HEADER, "", ",");
     }
 
     /**
